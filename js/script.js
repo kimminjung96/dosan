@@ -16,25 +16,34 @@ $(function () {
     //.stop() =>하던일을 멈추고 그 다음일 함
   });
 
-  $(".full_cover>ul>li").mouseover(function(){
+  $(".full_cover>ul>li").mouseover(function () {
     //this(마우스 올린 li) // index() =>번호를 읽어옴
     //원뎁스 li 중 마우스 올라간 요소의 번호를 i에 할당
-    var i=$(this).index();
+    var i = $(this).index();
     /* $(".nav li").eq(i) => eq(n) n번째 요소 취득 */
     /* 투뎁스 i번째에 마우스 오버시 원뎁스 i번째 find() 하위탐색 */
-    $(".nav li").eq(i).find(".line").css("width","100%");
+    $(".nav li").eq(i).find(".line").css("width", "100%");
   });
 
-  $(".full_cover>ul>li").mouseleave(function(){
-    var i=$(this).index();
-    $(".nav li").eq(i).find(".line").css("width","0%");
+  $(".full_cover>ul>li").mouseleave(function () {
+    var i = $(this).index();
+    $(".nav li").eq(i).find(".line").css("width", "0%");
   });
 
-  $(".nav li").mouseover(function(){
-    $(this).find(".line").css("width","100%");
-  })
-  $(".nav li").mouseover(function(){
-    $(this).find(".line").css("width","0%");
-  })
+  $(".nav li").mouseover(function () {
+    $(this).find(".line").css("width", "100%");
+  });
+  $(".nav li").mouseover(function () {
+    $(this).find(".line").css("width", "0%");
+  });
+
+  //mobile//
+  
+  $("#header .mo").click(function () {
+    $(".mo_menu").stop().slideToggle("fast");
+    $(this).css("color","blue")
+  });
+  
+
 
 }); //jQuery

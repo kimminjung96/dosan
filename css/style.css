@@ -15,8 +15,34 @@
 .nav .line { width: 0%; height: 2px; background: #1634db; position: absolute; left: 0; bottom: 0; transition: width 0.8s; } 
 /* .nav a:hover .line { width: 100%; } 
 자바스크립트로 대체 */
-/* full_menu */
-.full_menu{
+
+/* .mo_menu */
+#header .mo{
+  padding-right: 20px;
+  display: none;
+}
+.mo span{
+  font-size: 3rem;
+}
+.mo_menu{
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999999;
+  left: 0;
+  top: 100%;
+  display: none;
+}
+.mo_menu ul{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 50%;
+  margin: auto;
+}
+
+/* pc full_menu */
+#header .full_menu{
   position: absolute;
   top: 100%;
   left: 0;
@@ -25,6 +51,7 @@
   border-top: 1px solid #c1c1c1;
   box-sizing: border-box;
   background-color: #fff;
+  box-shadow: 3px 3px 5px rgba(225, 225, 225, 0.3);
   display: none;
   z-index: 999999;
 }
@@ -36,6 +63,7 @@
 }
 .full_menu .full_cover>ul>li{
   width: 20%;
+  max-width: 140px;
   height: 450px;
   border-left: 1px solid #c1c1c1;
   box-sizing: border-box;
@@ -96,3 +124,20 @@
 #main_slide .slide_cover ul li a h2 { position: absolute; color: #fff; font-size: 6rem; line-height: 1.2; top: 15%; left: 10%; width: 480px; word-break: keep-all; } 
 #main_slide .slide_cover ul li a p { position: absolute; bottom: 0%; right: 10%; color: #fff; font-size: 2.4em; width: 400px; } 
 #main_slide .slide_cover img { position: absolute; height: 100%; } 
+
+
+/* mediaQuery */
+@media screen and (max-width:1330px) {
+  #header {height: auto;}
+  .header_cover{display: flex; align-items: center;}
+  .header_cover .logo{float: none; margin: 0 auto; padding: 20px 0;}
+  .header_cover .logo a img{padding: 0;}
+
+  #header .full_menu{display: none;}
+  #header .nav{display: none;}
+  #header .gnb{display: none;}
+  #header .mo{
+    display: block;
+  }
+  
+}
